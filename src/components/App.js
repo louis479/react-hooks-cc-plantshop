@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import PlantPage from "./PlantPage";
 
@@ -12,17 +11,23 @@ function App() {
       .then((data) => setPlants(data));
   }, []);
 
+  function handleAddPlant(newPlant) {
+    fetch("http://localhost:6001/plants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPlant),
+    })
+    .then((res) => res.json())
+    .then((addedPlant) => setPlants((prevPlants) => [...prevPlants, addedPlant]));
+  }
+  
+
   return (
     <div className="app">
-      {plants.map((plant) => (
-        <div key={plant.id}>
-          <h2>{plant.name}</h2>
-          <img src={plant.image} alt={plant.name} width="150" />
-          <p>${plant.price.toFixed(2)}</p>
-        </div>
-      ))}
       <Header />
-      <PlantPage />
+      <PlantPage plants={plants} onAddPlant={handleAddPlant} /> 
     </div>
   );
 }

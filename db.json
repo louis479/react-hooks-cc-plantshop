@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Fiddle Leaf Fig",
+      "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1716492671-1716491568-1672943223-large-fiddle-leaf-fig-tree-1672943215-664f99746ce70.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "price": 9.35,
+      "id": 8
+    },
+    {
+      "name": "Money Tree",
+      "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1716479124-screenshot-2024-05-23-at-11-44-44-am-664f647f30be3.png?crop=0.978xw:0.987xh;0.00481xw,0&resize=980:*",
+      "price": 7.2,
+      "id": 9
     }
   ]
 }
